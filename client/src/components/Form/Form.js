@@ -12,6 +12,8 @@ const Form = ({ currentId, setCurrentId }) => {
     description: "",
     eventDate: "",
     imageFile: "",
+    country: "",
+    city: "",
   });
   const event = useSelector((state) =>
     currentId ? state.events.find((message) => message._id === currentId) : null
@@ -30,6 +32,8 @@ const Form = ({ currentId, setCurrentId }) => {
       description: "",
       eventDate: "",
       imageFile: "",
+      country: "",
+      city: "",
     });
   };
 
@@ -65,6 +69,24 @@ const Form = ({ currentId, setCurrentId }) => {
           onChange={(e) =>
             setEventData({ ...eventData, title: e.target.value })
           }
+        />
+        <TextField
+          name="country"
+          variant="outlined"
+          label="Country"
+          fullWidth
+          value={eventData.country}
+          onChange={(e) =>
+            setEventData({ ...eventData, country: e.target.value })
+          }
+        />
+        <TextField
+          name="city"
+          variant="outlined"
+          label="City"
+          fullWidth
+          value={eventData.city}
+          onChange={(e) => setEventData({ ...eventData, city: e.target.value })}
         />
         <TextField
           name="description"

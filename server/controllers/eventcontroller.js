@@ -23,7 +23,7 @@ export const getEvents = async (req, res) => {
         e.city
       );
 
-      eventsarray.push(eventResponse);
+      eventsArray.push(eventResponse);
     }
 
     res.status(200).json(eventsArray);
@@ -46,7 +46,8 @@ export const getEvent = async (req, res) => {
       event.description,
       date,
       event.country,
-      event.city
+      event.city,
+      event.address
     );
 
     res.status(200).json(eventResponse);

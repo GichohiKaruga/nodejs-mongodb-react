@@ -13,6 +13,7 @@ import DeleteIcon from "@material-ui/icons/Delete";
 import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
 import moment from "moment";
 import { useDispatch } from "react-redux";
+import useStyles from "./style";
 
 const Event = ({ event, setCurrentId }) => {
   const dispatch = useDispatch();
@@ -24,12 +25,13 @@ const Event = ({ event, setCurrentId }) => {
         className={classes.media}
         image={
           event.imageFile ||
-          "https://user-images.githubusercontent.com/194400/49531010-48dad180-f8b1-11e8-8d89-1e61320e1d82.png"
+          "https://cdn.pixabay.com/photo/2018/05/31/11/54/celebration-3443779_1280.jpg"
         }
         title={event.title}
       />
       <div className={classes.overlay}>
-        <Typography variant="h6">{event.creator}</Typography>
+        <Typography variant="h6">{event.country}</Typography>
+        <Typography variant="h6">{event.city}</Typography>
         <Typography variant="body2">
           {moment(event.createdAt).fromNow()}
         </Typography>

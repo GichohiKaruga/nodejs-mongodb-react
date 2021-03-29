@@ -8,6 +8,7 @@ const EventSchema = mongoose.Schema({
   imageFile: String,
   country: String,
   city: String,
+  address: String,
   createdAt: {
     type: Date,
     default: new Date(),
