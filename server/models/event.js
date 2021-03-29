@@ -3,14 +3,17 @@ import mongoose from "mongoose";
 const EventSchema = mongoose.Schema({
   title: String,
   description: String,
+  creator: String,
   eventDate: Date,
   imageFile: String,
+  country: String,
+  city: String,
   createdAt: {
     type: Date,
     default: new Date(),
   },
 });
 
-var Event = mongoose.model("Event", EventSchema);
+const Event = mongoose.model("Events", EventSchema);
 
 export default Event;

@@ -3,6 +3,7 @@ import { Grid, CircularProgress } from "@material-ui/core";
 import { useSelector } from "react-redux";
 
 import useStyles from "./styles";
+import Event from "./Event/Event";
 
 const Events = ({ setCurrentId }) => {
   const events = useSelector((state) => state.events);

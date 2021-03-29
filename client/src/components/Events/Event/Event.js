@@ -1,4 +1,4 @@
-import { deleteEvent } from "../../util";
+import { deleteEvent } from "../../../util";
 import React from "react";
 import {
   Card,
@@ -8,6 +8,7 @@ import {
   Button,
   Typography,
 } from "@material-ui/core/";
+
 import DeleteIcon from "@material-ui/icons/Delete";
 import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
 import moment from "moment";
@@ -28,7 +29,7 @@ const Event = ({ event, setCurrentId }) => {
         title={event.title}
       />
       <div className={classes.overlay}>
-        <Typography variant="h6">{post.creator}</Typography>
+        <Typography variant="h6">{event.creator}</Typography>
         <Typography variant="body2">
           {moment(event.createdAt).fromNow()}
         </Typography>
@@ -37,15 +38,10 @@ const Event = ({ event, setCurrentId }) => {
         <Button
           style={{ color: "white" }}
           size="small"
-          onClick={() => setCurrentId(post._id)}
+          onClick={() => setCurrentId(event._id)}
         >
           <MoreHorizIcon fontSize="default" />
         </Button>
-      </div>
-      <div className={classes.details}>
-        <Typography variant="body2" color="textSecondary" component="h2">
-          {post.tags.map((tag) => `#${tag} `)}
-        </Typography>
       </div>
       <Typography
         className={classes.title}
@@ -64,7 +60,7 @@ const Event = ({ event, setCurrentId }) => {
         <Button
           size="small"
           color="primary"
-          onClick={() => dispatch(deleteEvent(post._id))}
+          onClick={() => dispatch(deleteEvent(event._id))}
         >
           <DeleteIcon fontSize="small" /> Delete
         </Button>
