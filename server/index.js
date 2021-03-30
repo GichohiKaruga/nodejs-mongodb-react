@@ -13,7 +13,9 @@ app.use(cors());
 
 app.use("/events", eventRoutes);
 
-const CONNECTION_URL = process.env.CONNECTION_URL;
+const CONNECTION_URL =
+  "mongodb+srv://mern-user:qkf8q7pgq341N8M1@mern-cluster.zn9ea.mongodb.net/eventdata?retryWrites=true&w=majority" ||
+  process.env.CONNECTION_URL;
 const PORT = process.env.PORT || 5000;
 
 mongoose
@@ -24,3 +26,5 @@ mongoose
   .catch((error) => console.log(`${error} did not connect`));
 
 mongoose.set("useFindAndModify", false);
+
+export default app;

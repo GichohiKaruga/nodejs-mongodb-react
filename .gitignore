@@ -2,3 +2,5 @@
 /client/node_modules
 /client/yarn.lock
 /server/.env
+node_modules
+package-lock.json

@@ -6,7 +6,7 @@ import {
   createEvent,
   updateEvent,
   deleteEvent,
-} from "../controllers/eventcontroller.js";
+} from "../controllers/event.controller.js";
 
 const router = express.Router();
 
@@ -16,6 +16,5 @@ router.get("/:id", getEvent);
 router.patch("/:id", updateEvent);
 router.post("/:id", updateEvent);
 router.delete("/:id", deleteEvent);
-
 
 export default router;

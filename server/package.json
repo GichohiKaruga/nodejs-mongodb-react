@@ -5,7 +5,8 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "nodemon index.js",
+    "test": "mocha **/*.spec.js --timeout 10000 --exit"
   },
   "author": "",
   "license": "ISC",
@@ -16,5 +17,13 @@
     "moment": "^2.29.1",
     "mongoose": "^5.9.29",
     "mongoose-float": "^1.0.4"
+  },
+  "devDependencies": {
+    "chai": "^4.3.4",
+    "chai-http": "^4.3.0",
+    "faker": "^5.5.1",
+    "mocha": "^8.3.2",
+    "mongo-unit": "^2.0.1",
+    "sinon": "^10.0.0"
   }
 }
